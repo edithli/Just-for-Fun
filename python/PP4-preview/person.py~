@@ -1,0 +1,19 @@
+class Person(Object):
+    def __init__(self, name, age, pay=0, job=None):
+        self.name = name
+        self.age = age
+        self.pay = pay
+        self.job = job
+
+    def raiseSalary(self, percent):
+        self.pay *= (1 + percent)
+
+    def lastName(self):
+        return self.name.split()[-1]
+
+if __name__ == '__main__':
+    bob = Person('Bob Smith', 45, 3000, 'software')
+    sue = Person('Sue Jones', 42, 4000, 'hardware')
+    print(bob.lastName())
+    sue.raiseSalary(.20)
+    print(sue.pay)
